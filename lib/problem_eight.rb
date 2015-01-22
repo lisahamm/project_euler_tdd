@@ -37,5 +37,9 @@ module ProjectEuler
       end
       sequence_with_largest_product
     end
+
+    def self.largest_product_of_sequence_digits(n, number_of_digits)
+      product_of_adjacent_digits(sequence_with_largest_product(n, number_of_digits))
+    end
   end
 end
