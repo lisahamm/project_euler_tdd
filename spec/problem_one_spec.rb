@@ -22,6 +22,5 @@ module ProjectEuler
     it "can return the sum of natural numbers below 10 that are multiples of 3 and 5" do
       expect(ProblemOne.sum_of_multiples(1000)).to eq 233168
     end
-
   end
 end
