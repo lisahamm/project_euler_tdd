@@ -55,5 +55,9 @@ module ProjectEuler
       end
       combinations
     end
+
+    def self.largest_product(combinations)
+      combinations.map {|a,b,c,d| a*b*c*d}.max
+    end
   end
 end
