@@ -59,5 +59,26 @@ module ProjectEuler
     def self.largest_product(combinations)
       combinations.map {|a,b,c,d| a*b*c*d}.max
     end
+
+    def self.format_number(n)
+      i = 0
+      numbers = []
+      while i < n.length
+        char_array = n[i].chars
+        j=0
+        row = []
+        while j < n[i].length
+          if char_array[j] == "0"
+            row << char_array[j+1].to_i
+          else
+            row << (char_array[j] + char_array[j+1]).to_i
+          end
+          j += 3
+        end
+        numbers << row
+        i += 1
+      end
+      numbers
+    end
   end
 end
