@@ -10,5 +10,10 @@ module ProjectEuler
     it "returns all combinations of 4 adjacent items in the left direction in a 2 dimensional array" do
       expect(ProblemEleven.adjacent_items_left([[1,2,3,4],[5,6,7,8]])).to eq [[1,2,3,4],[5,6,7,8]]
     end
+
+    it "returns all combinations of 4 adjacent items in the downwards direction in a 2 dimensional array" do
+      expect(ProblemEleven.adjacent_items_left([[1,2],[3,4],[5,6],[7,8]])).to eq [[1,3,5,7][2,4,6,8]]
+    end
+
   end
 end
