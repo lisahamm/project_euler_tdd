@@ -56,7 +56,7 @@ module ProjectEuler
       expect(ProblemFour.largest_palindrome(2)).to eq 9009
     end
 
-    it "returns the largest palindrome product of multipliers of 1 digit" do
+    it "returns the largest palindrome product of multipliers of 3 digit" do
       expect(ProblemFour.largest_palindrome(3)).to eq 906609
     end
   end
