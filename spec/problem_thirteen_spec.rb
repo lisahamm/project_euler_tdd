@@ -133,5 +133,13 @@ module ProjectEuler
       expect(ProblemThirteen.sums_of_columns(digit_array).first).to eq 506
     end
 
+    it "returns the sum of all columns" do
+      expect(ProblemThirteen.sum_all_columns([55,44,33,22,11])).to eq "597531"
+    end
+
+    it "returns the first 10 digits of the sum of one hundred 50 digit numbers" do
+      sum = ProblemThirteen.sum_all_columns(ProblemThirteen.sums_of_columns(digit_array))
+      expect(sum[0..9].to_i).to eq 5537376230
+    end
   end
 end
