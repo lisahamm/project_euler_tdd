@@ -3,20 +3,15 @@ module ProjectEuler
     include PrimeNumber
 
     def options(limit)
-      if limit < 8
-        options = (2...limit).to_a
-      else
-        options = (2..limit).to_a
-        options.reject!{|n| n % 2 == 0}
-        options.reject!{|n| n % 3 == 0}
-        options.reject!{|n| n % 5 == 0}
-        options.reject!{|n| n % 7 == 0}
-      end
+      (2...limit).to_a.reject {|option| first_ten_primes.any? {|prime| option % prime == 0 && option != prime}}
     end
 
     def prime_numbers(options)
-      prime_options = options.last > 7 ? [2,3,5,7] | options : options
-      prime_options.each {|n| yield n if prime?(n)}
+      options.each {|n| yield n if prime?(n)}
+    end
+
+    def first_ten_primes
+      [2,3,5,7,11,13,17,19,23,29]
     end
 
   end

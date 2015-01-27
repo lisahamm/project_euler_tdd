@@ -17,16 +17,22 @@ module ProjectEuler
       expect(sum).to eq 5736396
     end
 
-    it "returns 2 as the sum of prime numbers under 2000000", :speed => 'slow' do
+    it "returns 2 as the sum of prime numbers under 200000", :speed => 'slow' do
       sum = 0
       prime_numbers(options(200000)) {|n| sum += n}
       expect(sum).to eq 1709600813
     end
 
+    it "returns 2 as the sum of prime numbers under 500000", :speed => 'slow' do
+      sum = 0
+      prime_numbers(options(500000)) {|n| sum += n}
+      expect(sum).to eq 9914236195
+    end
+
     it "returns 2 as the sum of prime numbers under 2000000", :speed => 'slow' do
       sum = 0
       prime_numbers(options(2000000)) {|n| sum += n}
-      expect(sum).to eq 1709600813
+      expect(sum).to eq 142913828922
     end
 
   end
