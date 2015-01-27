@@ -106,14 +106,31 @@ module ProjectEuler
       "53503534226472524250874054075591789781264330331690"]
     }
 
+    let(:digit_array) {ProblemThirteen.format_number(number_array)}
+
     it "returns an array with arrays of digits" do
-      digit_array = ProblemThirteen.format_number(number_array)
       expect(digit_array[0][0]).to eq 3
       expect(digit_array[1][0]).to eq 4
     end
 
     it "returns the sum of the digits in a specific column" do
       expect(ProblemThirteen.sum_column([[1]], 0)).to eq 1
+    end
+
+    it "returns the sum of the digits in a specific column" do
+      expect(ProblemThirteen.sum_column([[1],[1]], 0)).to eq 2
+    end
+
+    it "returns the sum of the digits in a specific column" do
+      expect(ProblemThirteen.sum_column([[1],[1],[2]], 0)).to eq 4
+    end
+
+    it "returns the sum of the digits in a specific column" do
+      expect(ProblemThirteen.sum_column([[1,2],[1,2]], 1)).to eq 4
+    end
+
+    it "returns the sums of the digits in each column" do
+      expect(ProblemThirteen.sums_of_columns(digit_array).first).to eq 506
     end
 
   end
