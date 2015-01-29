@@ -30,5 +30,9 @@ module ProjectEuler
     it "returns the difference between the sum of squares and the square of the sum of a range of numbers" do
       expect(ProblemSix.square_of_sum_minus_sum_of_squares(1..1)).to eq 0
     end
+
+    it "returns the difference between the sum of squares and the square of the sum of a range of numbers" do
+      expect(ProblemSix.square_of_sum_minus_sum_of_squares(1..100)).to eq 25164150
+    end
   end
 end

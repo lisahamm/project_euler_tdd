@@ -4,15 +4,15 @@ require 'problem_twelve'
 module ProjectEuler
   describe ProblemTwelve do
     it "returns the divisors of 1" do
-      expect(ProblemTwelve.divisors(1)).to eq [1]
+      expect(ProblemTwelve.number_of_divisors(1)).to eq 1
     end
 
     it "returns the divisors of 2" do
-      expect(ProblemTwelve.divisors(2)).to eq [1,2]
+      expect(ProblemTwelve.number_of_divisors(2)).to eq 2
     end
 
     it "returns the divisors of 28" do
-      expect(ProblemTwelve.divisors(28)).to eq [1,2,4,7,14,28]
+      expect(ProblemTwelve.number_of_divisors(28)).to eq 6
     end
 
     it "returns the first triangular number to have over 1 divisor" do
@@ -35,7 +35,11 @@ module ProjectEuler
       expect(ProblemTwelve.triangular_number_with_over_n_divisors(100)).to eq 73920
     end
 
-    it "returns the first triangular number to have over 100 divisors", :speed => 'slow' do
+    it "returns the first triangular number to have over 200 divisors", :speed => 'slow' do
+      expect(ProblemTwelve.triangular_number_with_over_n_divisors(200)).to eq 2031120
+    end
+
+    it "returns the first triangular number to have over 500 divisors", :speed => 'slow' do
       expect(ProblemTwelve.triangular_number_with_over_n_divisors(500)).to eq 73920
     end
   end
