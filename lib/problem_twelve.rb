@@ -1,6 +1,10 @@
+require 'prime_factors'
+
 module ProjectEuler
   module ProblemTwelve
-    def self.triangular_number_with_over_n_divisors(desired_number_of_divisors)
+    include PrimeFactors
+
+    def triangular_number_with_over_n_divisors(desired_number_of_divisors)
       triangular_number = 0
       divisors = 0
       i = 1
@@ -15,9 +19,9 @@ module ProjectEuler
       end
     end
 
-    def self.number_of_divisors(number)
+    def number_of_divisors(number)
       return 1 if number == 1
-      ((1..number/2).find_all {|i| number % i == 0 } + [number]).length
+      counts_of_prime_factors(prime_factors_of(number)).map {|n| n + 1}.reduce(:*)
     end
   end
 end
